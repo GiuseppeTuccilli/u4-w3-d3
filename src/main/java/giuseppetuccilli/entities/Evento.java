@@ -11,6 +11,7 @@ import java.util.UUID;
 public class Evento {
     @Id
     @GeneratedValue
+    @Column(name = "evento_id")
     private UUID id;
     private String titolo;
     private LocalDate dataEvento;
@@ -20,6 +21,10 @@ public class Evento {
     private EventType tipoEvento;
 
     private int maxPartecipanti;
+
+    @ManyToOne
+    @JoinColumn(name = "location_id")
+    private Location location;
 
     public Evento() {
     }
