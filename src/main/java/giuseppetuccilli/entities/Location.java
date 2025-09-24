@@ -17,4 +17,28 @@ public class Location {
     public Location() {
     }
 
+    public Location(String nome, String città) {
+        this.nome = nome;
+        this.città = città;
+    }
+
+    public UUID getLocationId() {
+        return locationId;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCittà() {
+        return città;
+    }
+
+    public void setCittà(String città) {
+        this.città = città;
+    }
 }

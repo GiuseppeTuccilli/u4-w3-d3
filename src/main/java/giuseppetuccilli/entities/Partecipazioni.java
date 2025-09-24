@@ -16,7 +16,7 @@ public class Partecipazioni {
     @ManyToOne
     @JoinColumn(name = "personaid", nullable = false)
     private Persona persona;
-    
+
     @ManyToOne
     @JoinColumn(name = "evento_id", nullable = false)
     private Evento evento;

@@ -4,6 +4,8 @@ import giuseppetuccilli.entities.Evento;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
+import java.util.UUID;
+
 public class EventiDAO {
 
     private final EntityManager ent;
@@ -20,15 +22,15 @@ public class EventiDAO {
         System.out.println("l' evento " + e.getTitolo() + " è stato salvato");
     }
 
-    public Evento getById(long id) {
-        Evento found = ent.find(Evento.class, id);
+    public Evento getById(String id) {
+        Evento found = ent.find(Evento.class, UUID.fromString(id));
         if (found == null) {
             throw new RuntimeException("evento non trovato");
         }
         return found;
     }
 
-    public void delete(long id) {
+    public void delete(String id) {
         Evento found = this.getById(id);
         EntityTransaction tr = ent.getTransaction();
         tr.begin();
