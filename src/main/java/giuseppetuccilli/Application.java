@@ -51,6 +51,9 @@ public class Application {
         // pard.save(part1);
         System.out.println(pFromDb);
 
+        em.close();
+        emf.close();
+
 
         System.out.println("Hello World!");
     }
