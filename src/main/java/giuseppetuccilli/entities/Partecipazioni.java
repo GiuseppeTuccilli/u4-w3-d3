@@ -27,5 +27,37 @@ public class Partecipazioni {
     public Partecipazioni() {
     }
 
+    public Partecipazioni(Persona per, Evento ev, Stato stato) {
+        this.persona = per;
+        this.evento = ev;
+        this.stato = stato;
 
+    }
+
+    @Override
+    public String toString() {
+        return "Partecipazioni{" +
+                "stato=" + stato +
+                '}';
+    }
+
+    public Stato getStato() {
+        return stato;
+    }
+
+    public void setStato(Stato stato) {
+        this.stato = stato;
+    }
+
+    public Evento getEvento() {
+        return evento;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public UUID getPartId() {
+        return partId;
+    }
 }
